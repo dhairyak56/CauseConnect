@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8e1;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #fff8e1;
+    text-align: center;
+    padding: 20vh 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+.btn-primary {
+    background-color: #ff8c00; /* Changed to the provided orange color */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-primary:hover {
+    background-color: #3498db;
+}
+
+.btn-secondary:hover {
+    background-color: #3498db;
+}
+
+
+/* Events Section */
+.events-near, .past-events {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.events-near h2, .past-events h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.events-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event-card {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px #3498db;
+}
+
+.event-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.event-card .btn-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #fff8e1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.faq-item p {
+    color: #555;
+}
+
+.see-more {
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.see-more:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,90 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8e1;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Main container styling */
+main {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(to bottom right, #fff8e1, #ffecb3);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Main heading styling */
+main h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Event list styling */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual event item styling */
+.event-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Event title styling */
+.event-item h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* Event details styling */
+.event-item p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Event image styling */
+.event-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* RSVP button styling */
+.rsvp-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rsvp-button:hover {
+    background-color: #e07b00;
+}

@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8e1;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+
+/* Profile Page Styles */
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f8e1c1;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.profile-container .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.profile-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile-container input[type="text"],
+.profile-container input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+}
+
+.profile-button {
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: calc(100% - 20px);
+    font-size: 16px;
+}
+
+.profile-button:hover {
+    background-color: #333;
+}
+

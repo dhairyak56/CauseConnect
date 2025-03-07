@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="/css/events.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+    <main>
+        <h1>Events</h1>
+        <div class="events-list">
+            <% events.forEach(event => { %>
+                <div class="event-item">
+                    <h2><%= event.name %></h2>
+                    <p><strong>Organization:</strong> <%= event.organization %></p>
+                    <p><strong>Location:</strong> <%= event.location %></p>
+                    <p><strong>Time:</strong> <%= event.time %></p>
+                    <p><strong>Description:</strong> <%= event.description %></p>
+                    <p><strong>Date:</strong> <%= new Date(event.date).toLocaleDateString() %></p>
+                    <% if (user) { %>
+                        <form action="/rsvp" method="POST">
+                            <input type="hidden" name="eventId" value="<%= event.id %>">
+                            <button type="submit" class="rsvp-button">RSVP</button>
+                        </form>
+                    <% } else { %>
+                        <a href="/signup" class="rsvp-button">RSVP</a>
+                    <% } %>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    <footer>
+        <%- include('footer') %>
+    </footer>
+</body>
+</html>

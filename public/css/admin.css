@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8e1;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Admin Container */
+.admin-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f8e1c1;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-container h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.admin-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.admin-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.admin-container table, th, td {
+    border: 1px solid #ccc;
+}
+
+.admin-container th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.admin-container th {
+    background-color: #f0a202;
+    color: #fff;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    color: green;
+    margin-bottom: 20px;
+}
+
+.role-form select, .delete-form button, .update-role-button, .approve-button {
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.role-form select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.update-role-button, .delete-button, .approve-button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+}
+
+.update-role-button:hover, .delete-button:hover, .approve-button:hover {
+    background-color: #2980b9;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}

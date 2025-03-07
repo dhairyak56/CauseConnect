@@ -1,0 +1,91 @@
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.footer-top {
+    margin-bottom: 30px;
+}
+
+.footer-top h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscribe-section input {
+    padding: 10px;
+    border: 1px solid #c21111;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.subscribe-section button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #541f1f;
+    color: rgb(234, 13, 13);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-section button:hover {
+    background-color: #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 10px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.footer-column h3 {
+    margin-bottom: 1px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.footer-column p, .footer-column a {
+    margin: 15px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-social a:hover img {
+    opacity: 0.7;
+}

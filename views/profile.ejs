@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CauseConnect</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+    <main class="profile-container">
+        <h1>Welcome, <%= user.name %>!</h1>
+        <% if (messages.error) { %>
+            <div class="alert alert-danger"><%= messages.error %></div>
+        <% } %>
+        <% if (messages.success) { %>
+            <div class="alert alert-success"><%= messages.success %></div>
+        <% } %>
+        <section class="user-details">
+            <h2>Edit Your Profile</h2>
+            <form action="/profile" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="<%= user.name %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                </div>
+                <button type="submit" class="btn">Update Profile</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <%- include('footer') %>
+    </footer>
+</body>
+</html>

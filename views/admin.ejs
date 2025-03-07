@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+    <main class="admin-container">
+        <h1>Admin Panel</h1>
+        <% if (messages.error && messages.error.length> 0) { %>
+            <div class="error-message">
+                <%= messages.error %>
+            </div>
+            <% } %>
+                <% if (messages.success && messages.success.length> 0) { %>
+                    <div class="success-message">
+                        <%= messages.success %>
+                    </div>
+                    <% } %>
+
+                        <section class="users-section">
+                            <h2>Users</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Email</th>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% users.forEach(user=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= user.id %>
+                                            </td>
+                                            <td>
+                                                <%= user.email %>
+                                            </td>
+                                            <td>
+                                                <%= user.name %>
+                                            </td>
+                                            <td>
+                                                <form action="/update_role" method="POST" class="role-form">
+                                                    <input type="hidden" name="userId" value="<%= user.id %>">
+                                                    <select name="role">
+                                                        <option value="user" <%=user.role==='user' ? 'selected' : '' %>
+                                                            >User</option>
+                                                        <option value="organization" <%=user.role==='organization'
+                                                            ? 'selected' : '' %>>Organization</option>
+                                                        <option value="admin" <%=user.role==='admin' ? 'selected' : ''
+                                                            %>>Admin</option>
+                                                    </select>
+                                                    <button type="submit" class="update-role-button">Update</button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <form action="/delete_user" method="POST" class="delete-form">
+                                                    <input type="hidden" name="userId" value="<%= user.id %>">
+                                                    <button type="submit" class="delete-button">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <section class="pending-events-section">
+                            <h2>Pending Events</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Organization</th>
+                                        <th>Location</th>
+                                        <th>Time</th>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% pendingEvents.forEach(event=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= event.id %>
+                                            </td>
+                                            <td>
+                                                <%= event.name %>
+                                            </td>
+                                            <td>
+                                                <%= event.organization_name %>
+                                            </td>
+                                            <td>
+                                                <%= event.location_name %>
+                                            </td>
+                                            <td>
+                                                <%= event.time %>
+                                            </td>
+                                            <td>
+                                                <%= new Date(event.date).toLocaleString() %>
+                                            </td>
+                                            <td>
+                                                <%= event.description %>
+                                            </td>
+                                            <td>
+                                                <form action="/approve_event" method="POST" style="display: inline;">
+                                                    <input type="hidden" name="eventId" value="<%= event.id %>">
+                                                    <button type="submit">Approve</button>
+                                                </form>
+                                                <form action="/delete_event" method="POST" style="display: inline;">
+                                                    <input type="hidden" name="eventId" value="<%= event.id %>">
+                                                    <button type="submit">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                            </table>
+
+                        </section>
+    </main>
+    <footer>
+        <%- include('footer') %>
+    </footer>
+</body>
+
+</html>

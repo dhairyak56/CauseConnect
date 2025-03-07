@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - CauseConnect</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+    <main class="signup-container">
+        <h2>Sign Up</h2>
+        <p>Create a new account</p>
+
+        <!-- Flash message section -->
+        <% if (messages.success && messages.success.length > 0) { %>
+            <div class="flash-message success">
+                <%= messages.success.join('<br>') %>
+            </div>
+        <% } %>
+        <% if (messages.error && messages.error.length > 0) { %>
+            <div class="flash-message error">
+                <%= messages.error.join('<br>') %>
+            </div>
+        <% } %>
+
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="isOrganization" name="role" value="organization">
+                <label for="isOrganization">Sign up as an organization</label>
+            </div>
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+        <div class="or-divider">OR</div>
+        <div class="google-login">
+            <a href="/auth/google" class="btn-google">
+                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo">
+                Sign Up with Google
+            </a>
+        </div>
+        <p>Already have an account? <a href="login">Log In</a></p>
+    </main>
+    <footer>
+        <%- include('footer') %>
+    </footer>
+    <!-- The Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Account successfully created!</p>
+            <button class="btn" id="loginButton">Login</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle flash messages and modal
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const flashMessage = '<%= messages.success %>';
+            if (flashMessage) {
+                const modal = document.getElementById('successModal');
+                const closeModal = document.getElementsByClassName('close')[0];
+                const loginButton = document.getElementById('loginButton');
+
+                modal.style.display = 'block';
+
+                closeModal.onclick = function() {
+                    modal.style.display = 'none';
+                };
+
+                loginButton.onclick = function() {
+                    window.location.href = 'login';
+                };
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                };
+            }
+        });
+    </script>
+</body>
+</html>

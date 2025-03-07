@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+    <main>
+        <h1>Welcome, <%= user.name %>!</h1>
+        <div class="main-container">
+            <div class="user-profile">
+                <h2>Your Profile</h2>
+                <p><strong>Name:</strong>
+                    <%= user.name %>
+                </p>
+                <p><strong>Email:</strong>
+                    <%= user.email %>
+                </p>
+                <a href="/profile" class="btn">Edit Profile</a>
+            </div>
+
+            <% if (user.role==='organization' ) { %>
+                <div class="events-section">
+                    <h2>Your Events</h2>
+                    <% if (events.length> 0) { %>
+                        <% events.forEach(event=> { %>
+                            <div class="event-item">
+                                <h3>
+                                    <%= event.name %>
+                                </h3>
+                                <p><strong>Date:</strong>
+                                    <%= new Date(event.date).toLocaleDateString() %>
+                                </p>
+                                <p><strong>Location:</strong>
+                                    <%= event.location_name %>
+                                </p>
+                                <p><strong>Description:</strong>
+                                    <%= event.description %>
+                                </p>
+                            </div>
+                            <% }); %>
+                                <% } else { %>
+                                    <p>No events found.</p>
+                                    <% } %>
+                </div>
+                <% } else { %>
+                    <div class="events-section">
+                        <h2>Events You RSVP'd For</h2>
+                        <% if (rsvpEvents.length> 0) { %>
+                            <% rsvpEvents.forEach(event=> { %>
+                                <div class="event-item">
+                                    <h3>
+                                        <%= event.name %>
+                                    </h3>
+                                    <p><strong>Date:</strong>
+                                        <%= event.date.toDateString() %>
+                                    </p>
+                                    <p><strong>Location:</strong>
+                                        <%= event.location_name %>
+                                    </p>
+                                    <p><strong>Description:</strong>
+                                        <%= event.description %>
+                                    </p>
+                                </div>
+                                <% }); %>
+                                    <% } else { %>
+                                        <p>No RSVPd events found.</p>
+                                    <% } %>
+                    </div>
+                <% } %>
+        </div>
+    </main>
+    <section class="subscribe-section">
+        <h2>Want to receive event updates?</h2>
+        <p>Enter your email to subscribe to our newsletter and stay updated on upcoming events.</p>
+        <form action="/subscribe" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="submit" value="Subscribe">
+        </form>
+    </section>
+    <footer>
+        <%- include('footer') %>
+    </footer>
+</body>
+
+</html>

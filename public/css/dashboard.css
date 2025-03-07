@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8e1;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Dashboard Styles */
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+main h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+}
+
+.main-container {
+    width: 100%;
+}
+
+/* User Profile Section */
+.user-profile {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.user-profile p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.user-profile .btn {
+    display: block;
+    padding: 12px 25px;
+    background-color: #ff8c00;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-profile .btn:hover {
+    background-color: #e07c00;
+}
+
+/* Events Section */
+.events-section {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.events-section h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.event-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-item p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Subscribe Section */
+.subscribe-section {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.subscribe-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.subscribe-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.subscribe-section input[type="email"] {
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.subscribe-section input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 30px;
+    background-color: #ff8c00;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-section input[type="submit"]:hover {
+    background-color: #e07c00;
+}

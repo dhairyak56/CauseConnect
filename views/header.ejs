@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <div class="logo">CauseConnect</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li><a href="events">Find Events</a></li>
+        <li><a href="faqs">FAQs</a></li>
+        <% if (user) { %>
+            <% if (user.role === 'admin') { %>
+                <li><a href="/admin">Admin Dashboard</a></li>
+            <% } %>
+            <% if (user.role !== 'admin') { %>
+                <li><a href="/profile">Profile</a></li>
+            <% } %>
+            <% if (user.role === 'organization') { %>
+                <li><a href="/post_event">Post Event</a></li>
+                <li><a href="/notification">Send Notification</a></li>
+            <% } %>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+            <li><a href="post_event">Post Event</a></li>
+            <li><a href="signup" class="sign-up">Sign Up</a></li>
+            <li><a href="login" class="login">Login</a></li>
+        <% } %>
+    </ul>
+</nav>

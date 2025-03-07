@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CauseConnect</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover, Join & Engage</h1>
+                <p>Empowering individuals to contribute to meaningful causes, make a positive impact on communities &
+                    beyond.</p>
+                <a href="/signup" class="btn-primary">Join CauseConnect</a>
+            </div>
+        </section>
+        <section class="events-near">
+            <h2>Events near Adelaide, AU</h2>
+            <div class="events-list">
+                <% events.forEach(event=> { %>
+                    <div class="event-card">
+                        <h3>
+                            <%= event.name %>
+                        </h3>
+                        <p><strong>Organization:</strong>
+                            <%= event.organization_name %>
+                        </p>
+                        <p><strong>Location:</strong>
+                            <%= event.location_name %>
+                        </p>
+                        <p><strong>Date:</strong>
+                            <%= new Date(event.date).toLocaleDateString() %>
+                        </p>
+                        <p><strong>Time:</strong>
+                            <%= event.time %>
+                        </p>
+                        <p><strong>Description:</strong>
+                            <%= event.description %>
+                        </p>
+                        <% if (user) { %>
+                            <form action="/rsvp" method="POST" class="rsvp-form">
+                                <input type="hidden" name="eventId" value="<%= event.id %>">
+                                <button type="submit" class="btn-secondary">RSVP</button>
+                            </form>
+                        <% } else { %>
+                            <a href="/login" class="btn-secondary">RSVP</a>
+                        <% } %>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+        <section class="faq">
+            <h2>FAQs</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Is CauseConnect free?</h3>
+                    <p>CauseConnect is completely free for anyone who wants to join events.</p>
+                    <h3>Where can I join the event?</h3>
+                    <p>Details will be provided on the event page.</p>
+                    <h3>Will cancelling an event cause a problem?</h3>
+                    <p>Not at all, just inform us in advance.</p>
+                    <h3>How to post events on the website?</h3>
+                    <p>You can post events after signing up as an organization.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I register without an email address?</h3>
+                    <p>Registration requires a valid email address.</p>
+                </div>
+                <a href="/faqs" class="see-more">See More</a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <%- include('footer') %>
+    </footer>
+
+</body>
+
+</html>

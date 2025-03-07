@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Events</title>
+    <link rel="stylesheet" href="/css/manage.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+    <main class="manage-container">
+        <h1>Manage Events</h1>
+        <% if (messages.error && messages.error.length > 0) { %>
+            <div class="error-message"><%= messages.error %></div>
+        <% } %>
+        <% if (messages.success && messages.success.length > 0) { %>
+            <div class="success-message"><%= messages.success %></div>
+        <% } %>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Organization</th>
+                    <th>Location</th>
+                    <th>Time</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% events.forEach(event => { %>
+                    <tr>
+                        <td><%= event.id %></td>
+                        <td><%= event.name %></td>
+                        <td><%= event.organization %></td>
+                        <td><%= event.location %></td>
+                        <td><%= event.time %></td>
+                        <td><%= event.description %></td>
+                        <td><%= event.date %></td>
+                        <td class="action-buttons">
+                            <a href="/events/edit/<%= event.id %>">Edit</a>
+                            <form action="/events/delete/<%= event.id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <%- include('footer') %>
+    </footer>
+</body>
+</html>
