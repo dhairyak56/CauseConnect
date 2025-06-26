@@ -1,5 +1,5 @@
 # causeconnect
-
+![causeconnect Demo](Causeconnect.png)
 
 # create a .env file in the root directory if it's not there already and enter the following:
 # by deafult the .env file is hidden
